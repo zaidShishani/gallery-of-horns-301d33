@@ -1,14 +1,17 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import SelectedBeast from './SelectedBeast.js'
+
 
 
 class HornedBeasts extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            votes: 0
+            votes: 0,
+            showModel: false
         };
     }
 
@@ -17,12 +20,24 @@ class HornedBeasts extends React.Component {
             votes: this.state.votes + 1
         })
     };
+
+    handleShow = () => {
+        this.setState({
+            showModle: true,
+        })
+    }
+
+    handleClose = () => {
+        this.setState({
+            showModal: false
+        })
+    }
     
  render() {
      return(
         <div>
-            <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={this.props.image_url} alt={this.props.title} title={this.props.title} />
+            <Card className='cards' style={{ width: '18rem' }}>
+          <Card.Img onClick={this.handleShow} variant="top" src={this.props.image_url} alt={this.props.title} title={this.props.title} />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>
@@ -36,7 +51,17 @@ class HornedBeasts extends React.Component {
             </Card.Text>
             <Button variant="primary" onClick={this.voteCount}>vote</Button>
           </Card.Body>
+          <Button onClick={this.handleShow} variant="primary" >show</Button>
         </Card>
+
+        <SelectedBeast
+                    handleClose={this.handleClose}
+                    show={this.state.showModal}
+                    title={this.props.title}
+                    image_url={<img src={this.props.image_url}/>}
+                    description = {this.props.description}
+
+                    />
         </div>
      )
  } 
