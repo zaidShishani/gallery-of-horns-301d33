@@ -32,7 +32,7 @@ class HornedBeasts extends React.Component {
             Horns: {this.props.horns}
             </Card.Text>
             <Card.Text>
-            Votes: {this.state.votes}
+            favorited &hearts;: {this.state.votes}
             </Card.Text>
             <Button variant="primary" onClick={this.voteCount}>vote</Button>
           </Card.Body>
