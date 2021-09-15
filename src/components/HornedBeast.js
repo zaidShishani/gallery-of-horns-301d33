@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
@@ -23,13 +23,13 @@ class HornedBeasts extends React.Component {
 
     handleShow = () => {
         this.setState({
-            showModle: true,
+            showModel: true,
         })
     }
 
     handleClose = () => {
         this.setState({
-            showModal: false
+            showModel: false
         })
     }
     
@@ -37,7 +37,7 @@ class HornedBeasts extends React.Component {
      return(
         <div>
             <Card className='cards' style={{ width: '18rem' }}>
-          <Card.Img onClick={this.handleShow} variant="top" src={this.props.image_url} alt={this.props.title} title={this.props.title} />
+          <Card.Img variant="top" src={this.props.image_url} alt={this.props.title} title={this.props.title} />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>
@@ -56,9 +56,9 @@ class HornedBeasts extends React.Component {
 
         <SelectedBeast
                     handleClose={this.handleClose}
-                    show={this.state.showModal}
+                    show={this.state.showModel}
                     title={this.props.title}
-                    image_url={<img src={this.props.image_url}/>}
+                    image_url={this.props.image_url}
                     description = {this.props.description}
 
                     />

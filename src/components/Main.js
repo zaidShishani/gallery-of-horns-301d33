@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import HornedBeast from './HornedBeast';
 import DataArr from './Data.json'
 
