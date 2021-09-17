@@ -3,8 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import SelectedBeast from './SelectedBeast.js'
-import data from './data.json';
-
 
 
 class HornedBeasts extends React.Component {
@@ -34,13 +32,6 @@ class HornedBeasts extends React.Component {
         })
     }
 
-    filterByHorn = () => {
-        let arr = data.filter((value) => value.horns === parseInt(this.state.horns))
-        this.setState({
-            DataFilterd: arr
-        })
-    }
-    
  render() {
      return(
         <div>
