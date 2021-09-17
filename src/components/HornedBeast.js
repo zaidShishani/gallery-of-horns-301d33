@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button'
 import SelectedBeast from './SelectedBeast.js'
 
 
-
 class HornedBeasts extends React.Component {
     constructor(props) {
         super(props);
@@ -32,12 +31,12 @@ class HornedBeasts extends React.Component {
             showModel: false
         })
     }
-    
+
  render() {
      return(
         <div>
             <Card className='cards' style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={this.props.image_url} alt={this.props.title} title={this.props.title} />
+          <Card.Img onClick={this.handleShow} variant="top" src={this.props.image_url} alt={this.props.title} title={this.props.title} />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>
@@ -51,7 +50,6 @@ class HornedBeasts extends React.Component {
             </Card.Text>
             <Button variant="primary" onClick={this.voteCount}>vote</Button>
           </Card.Body>
-          <Button onClick={this.handleShow} variant="primary" >show</Button>
         </Card>
 
         <SelectedBeast
